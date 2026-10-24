@@ -1,4 +1,4 @@
-const endpoint = "https://salzielectro14-default-rtdb.asia-southeast1.firebasedatabase.app/";
+const endpoint = "http://192.168.1.2";
 
 function dapurON() {
   fetch("https://salzielectro14-default-rtdb.asia-southeast1.firebasedatabase.app/dapur.json", {
