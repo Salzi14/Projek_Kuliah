@@ -1,23 +1,22 @@
 const endpoint = "http://192.168.1.2";
 
-function dapurON() {
-  fetch("https://salzielectro14-default-rtdb.asia-southeast1.firebasedatabase.app/dapur.json", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify("ON")
+function getDapurLed (){
+  fetch(endpoint + "/dapur", {method: "GET"}
+  ).then(response => response.text()).then(result => {
+      if(result == "ON") {
+          LedKamar.style.backgroundColor ="blue";
+          ledKamarImage.src="./led-on.png";
+      } else {
+          LedKamar.style.backgroundColor="lightblue";
+          ledKamarImage.src="./led-off.png";
+      }
   });
 }
 
-function dapurOFF() {
-  fetch("https://salzielectro14-default-rtdb.asia-southeast1.firebasedatabase.app/dapur.json", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify("OFF")
-  });
+function setDapurLed() {
+  fetch(endpoint + "/dapur", {
+    method: "POST"
+  }).then(response => response.text()).then(() => location.reload());
 }
 
 function getKamarLed (){
