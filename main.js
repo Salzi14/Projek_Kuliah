@@ -24,7 +24,7 @@ function getKamarLed (){
   fetch(endpoint + "/kamar", {method: "GET"}
   ).then(response => response.text()).then(result => {
       if(result == "ON") {
-          LedKamar.style.backgroundColo ="blue";
+          LedKamar.style.backgroundColor ="blue";
           ledKamarImage.src="./led-on.png";
       } else {
           LedKamar.style.backgroundColor="lightblue";
