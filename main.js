@@ -4,11 +4,11 @@ function getDapurLed (){
   fetch(endpoint + "/dapur", {method: "GET"}
   ).then(response => response.text()).then(result => {
       if(result == "ON") {
-          LedKamar.style.backgroundColor ="blue";
-          ledKamarImage.src="./led-on.png";
+          LedDapur.style.backgroundColor ="blue";
+          ledDapurImage.src="./led-on.png";
       } else {
-          LedKamar.style.backgroundColor="lightblue";
-          ledKamarImage.src="./led-off.png";
+          LedDapur.style.backgroundColor="lightblue";
+          ledDapurImage.src="./led-off.png";
       }
   });
 }
